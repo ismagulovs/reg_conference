@@ -1,0 +1,15 @@
+RewriteEngine on
+RewriteBase /
+Options All -Indexes
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^css/(.*)$ css/$1 [L]
+RewriteRule ^js/(.*)$ js/$1 [L]
+RewriteRule ^fonts/(.*)$ fonts/$1 [L]
+RewriteRule ^test/reg-ent/(.*)$ test/reg-ent/$1 [L] 
+RewriteRule ^func/(.*)$ func/$1 [L] 
+RewriteRule ^views/(.*)$ views/$1 [L]
+RewriteRule ^fingerprintjs/(.*)$ fingerprintjs/$1 [L]  
+RewriteRule ^.*$ [NC,L]
+RewriteRule ^.*$ index.php [NC,L] 
